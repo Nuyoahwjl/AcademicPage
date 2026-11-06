@@ -1,0 +1,58 @@
+---
+layout: homepage
+---
+<section id="about-me" class="content-section">
+  <h1>About me</h1>
+  {{ site.data.homepage.about | markdownify }}
+</section>
+
+<section id="news" class="content-section">
+  <h2>News</h2>
+  {% if site.data.homepage.news.size > 0 %}
+    <ul class="dated-list">
+      {% for item in site.data.homepage.news %}
+        <li><time>{{ item.date }}</time><div>{{ item.text | markdownify }}</div></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="empty-state">Updates coming soon.</p>
+  {% endif %}
+</section>
+
+<section id="publications" class="content-section">
+  <h2>Publications</h2>
+  {% if site.data.homepage.publications.size > 0 %}
+    <div class="publication-list">
+      {% for paper in site.data.homepage.publications %}
+        <article class="publication{% if paper.image %} publication--with-image{% endif %}">
+          {% if paper.image %}<img class="publication-image" src="{{ paper.image | relative_url }}" alt="{{ paper.title | escape }}" loading="lazy">{% endif %}
+          <div>
+            <h3>{% if paper.paper_url %}<a href="{{ paper.paper_url | escape }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}</h3>
+            <p>{{ paper.authors }}</p>
+            <p class="publication-venue">{{ paper.venue }}{% if paper.year %}, {{ paper.year }}{% endif %}</p>
+            <div class="paper-links">
+              {% if paper.paper_url %}<a href="{{ paper.paper_url | escape }}">Paper</a>{% endif %}
+              {% if paper.project_url %}<a href="{{ paper.project_url | escape }}">Project</a>{% endif %}
+              {% if paper.code_url %}<a href="{{ paper.code_url | escape }}">Code</a>{% endif %}
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="empty-state">Publications coming soon.</p>
+  {% endif %}
+</section>
+
+<section id="honors-and-awards" class="content-section">
+  <h2>Honors and Awards</h2>
+  {% if site.data.homepage.awards.size > 0 %}
+    <ul class="dated-list">
+      {% for award in site.data.homepage.awards %}
+        <li><time>{{ award.date }}</time><div><strong>{{ award.title }}</strong>{% if award.description %}<p>{{ award.description }}</p>{% endif %}</div></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="empty-state">Honors and awards coming soon.</p>
+  {% endif %}
+</section>

@@ -1,0 +1,46 @@
+<section id="map" class="author__visitor-map" aria-label="Visitor map">
+  <div class="map-widget">
+    <script id="_waurx1">
+      var _wau = _wau || [];
+      document.addEventListener("DOMContentLoaded", function () {
+        var map = document.getElementById("map");
+        var desktopParent = map.parentElement;
+        var mobileParent = document.getElementById("mobile-visitor-map");
+        var mobileLayout = window.matchMedia("(max-width: 1023px)");
+        var mapContainer = map.querySelector(".map-widget");
+        function fitMap() {
+          var drawing = mapContainer.querySelector(":scope > span");
+          if (!drawing) return;
+          var originalWidth = Number(drawing.dataset.originalWidth || parseFloat(drawing.style.width));
+          var originalHeight = Number(drawing.dataset.originalHeight || parseFloat(drawing.style.height));
+          drawing.dataset.originalWidth = originalWidth;
+          drawing.dataset.originalHeight = originalHeight;
+          var width = Math.min(mobileLayout.matches ? 320 : 420, Math.floor(mapContainer.clientWidth));
+          var scale = width / originalWidth;
+          drawing.style.width = width + "px";
+          drawing.style.height = originalHeight * scale + "px";
+          drawing.querySelectorAll(":scope > span").forEach(function (pin) {
+            var left = Number(pin.dataset.originalLeft || parseFloat(pin.style.marginLeft));
+            var top = Number(pin.dataset.originalTop || parseFloat(pin.style.marginTop));
+            pin.dataset.originalLeft = left;
+            pin.dataset.originalTop = top;
+            pin.style.marginLeft = (left + 5) * scale - 5 + "px";
+            pin.style.marginTop = (top + 5) * scale - 5 + "px";
+          });
+        }
+        function placeMap() {
+          (mobileLayout.matches ? mobileParent : desktopParent).appendChild(map);
+          fitMap();
+        }
+        placeMap();
+        mobileLayout.addEventListener("change", placeMap);
+        new ResizeObserver(fitMap).observe(mapContainer);
+        new MutationObserver(fitMap).observe(mapContainer, { childList: true });
+        var mapWidth = Math.min(mobileLayout.matches ? 320 : 420, Math.floor(mapContainer.clientWidth));
+        var mapHeight = Math.round(mapWidth / 2);
+        _wau.push(["map", "y2ne2xcsze", "rx1", String(mapWidth), String(mapHeight), "textbook", "heart-orange"]);
+      });
+    </script>
+    <script async src="https://waust.at/m.js"></script>
+  </div>
+</section>
