@@ -60,3 +60,11 @@ local/         本地预览、旧模板备份及检查记录（不发布）
 旧博客、报告、教学、作品集、样例论文、图片以及旧主题代码已从当前源码移出，备份路径记录在 `local/template-backup-path.txt`。
 
 保留原项目 MIT 许可证 `LICENSE`。Inter 字体许可证在 `assets/fonts/OFL.txt`；图标的来源与许可证在 `_includes/icons/`。
+
+## 外观与资料补充
+
+桌面端导航相对整页居中，默认不选中栏目；悬停或聚焦时才显示边框与下划线。右上角按钮支持亮暗切换并保存偏好。侧栏加宽至 320px，地图详情允许超出地图边界显示。
+
+研究兴趣使用深橙色常规字重。About 中的学院链接为 https://cs.hust.edu.cn/，院徽源图和导师头像保存在 `images/icons/`。院徽源图保留完整，以 CSS 只显示左侧图案；导师头像来自其个人主页使用的 `images/profile.jpg`。
+
+Codex 透明背景 SVG 来自 Devicon，许可证见 `images/icons/LICENSE-devicon.txt`。手机端布局本轮暂不继续调整。

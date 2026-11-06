@@ -9,7 +9,7 @@ a{color:var(--global-link-color);text-decoration:none}a:hover{text-decoration:un
 .header-grid{height:100%}.section-nav{grid-column:2;display:flex;align-items:center;justify-content:center;gap:36px}
 .section-nav a{position:relative;display:flex;align-items:center;height:100%;color:#58616d;font-size:16px;font-weight:500;white-space:nowrap;text-decoration:none}
 .section-nav a::after{position:absolute;content:'';height:2px;bottom:0;left:0;right:0;background:#2463a5;transform:scaleX(0);transition:transform .18s}
-.section-nav a:hover,.section-nav a[aria-current]{color:#2463a5}.section-nav a[aria-current]::after{transform:scaleX(1)}
+
 .content-grid{align-items:start;padding-top:44px}.sidebar{position:sticky;top:calc(var(--header-height) + 40px);max-height:calc(100vh - var(--header-height) - 60px);overflow-y:auto;overflow-x:hidden;scrollbar-width:thin}
 .author-profile{width:100%;max-width:320px;margin:auto;text-align:center}.author__avatar{width:170px;max-width:80%;margin:auto}.author__avatar img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;padding:4px;border:1px solid var(--global-border-color)}
 .author__name{margin:16px 0 6px;font-size:18px;font-weight:650;line-height:1.5;letter-spacing:-.025em}.author__bio{margin:0 0 14px;font-size:14px;color:#6a7280;line-height:1.6}
@@ -30,3 +30,35 @@ main{min-width:0;outline:none}.content-section{padding:0 0 32px;margin:0 0 30px;
 .inline-tool .inline-icon{align-self:center;vertical-align:middle}
 #about-me a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .inline-leading{white-space:nowrap}
+
+/* Shared palette; desktop refinement leaves the mobile layout unchanged. */
+:root{color-scheme:light;--heading-color:#222c38;--muted-color:#6a7280;--header-bg:rgba(255,255,255,.97);--hover-bg:#f4f6f8;--interest-color:#a65320;--icon-color:#424b55}
+:root[data-theme="dark"]{color-scheme:dark;--global-bg-color:#171b22;--global-text-color:#d4dbe5;--global-border-color:#343c48;--global-link-color:#92b9e1;--heading-color:#edf2f7;--muted-color:#a1acbb;--header-bg:rgba(23,27,34,.97);--hover-bg:#252d39;--interest-color:#e7a15b;--icon-color:#d4dbe5}
+.site-header{background:var(--header-bg)}
+.content-section h1,.content-section h2{color:var(--heading-color)}
+.author__bio,.publication-venue,.dated-list time,.empty-state{color:var(--muted-color)}
+.author__links a{color:var(--icon-color)}.author__links a:hover{color:var(--global-link-color);background:var(--hover-bg)}
+.research-interest{color:var(--interest-color);font-weight:400}
+[data-theme="dark"] .inline-icon[src$="deepseek-harness.svg"]{filter:invert(1)}
+.header-grid{position:relative}
+.section-nav a{color:var(--muted-color);border:1px solid transparent;border-radius:4px}
+.section-nav a::after{content:none}
+.section-nav a:hover,.section-nav a:focus{color:var(--global-text-color);background:var(--hover-bg);border-color:var(--global-border-color);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px;outline:none}
+.theme-toggle{position:absolute;right:0;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:38px;height:38px;padding:8px;border:1px solid transparent;border-radius:50%;background:transparent;color:var(--global-text-color);cursor:pointer}
+.theme-toggle:hover{background:var(--hover-bg);border-color:var(--global-border-color)}
+.theme-toggle svg{grid-area:1/1;width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.theme-sun{visibility:hidden}[data-theme="dark"] .theme-moon{visibility:hidden}[data-theme="dark"] .theme-sun{visibility:visible}
+@media(min-width:1024px){
+  :root{--sidebar-width:320px;--column-gap:44px}
+  .header-grid{display:flex;justify-content:center;align-items:center}
+  .section-nav{flex:none;gap:12px}
+  .section-nav a{height:42px;padding:0 17px}
+  .sidebar{max-height:none;overflow:visible;z-index:4}
+  .map-widget{overflow:visible}
+  .map-widget [data-balloon]:hover{z-index:10}
+  .author__visitor-map{max-width:320px}
+}
+
+/* Display only the emblem at the left of the original school wordmark. */
+.inline-icon--cs{width:1.6em;object-fit:cover;object-position:left center}
+.inline-icon--portrait{border-radius:50%;object-fit:cover}
