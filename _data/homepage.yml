@@ -1,5 +1,27 @@
+# Edit this file to fill the four homepage sections. No separate pages are needed.
 about: |
-  I am an undergraduate student at Huazhong University of Science and Technology (HUST).
+  I am a senior undergraduate in the <a href="https://en-cs.hust.edu.cn/">School of Computer Science and Technology</a> at <a href="https://www.hust.edu.cn/"><span class="inline-leading"><img class="inline-icon" src="images/icons/hust.png" alt="" aria-hidden="true">Huazhong</span> University of Science and Technology (HUST)</a>, advised by <a href="https://qinbinli.com/">Prof. Qinbin Li</a>. In Fall 2027, I will join <a class="inline-tool" href="https://www.zju.edu.cn/english/"><img class="inline-icon" src="images/icons/zju.png" alt="" aria-hidden="true">Zhejiang University</a> to pursue a Ph.D.
+
+  My research interests include **LLM agents**, **systems for AI**, **edge–cloud collaborative inference**, and **AI infrastructure**.
+
+  I enjoy collaborating with <a class="inline-tool" href="https://github.com/anthropics/claude-code"><img class="inline-icon" src="images/icons/claudecode.png" alt="" aria-hidden="true">Claude Code</a>, <a class="inline-tool" href="https://github.com/openai/codex"><img class="inline-icon" src="images/icons/codex.png" alt="" aria-hidden="true">Codex</a>, and <a class="inline-tool" href="https://github.com/deepseek-ai/deepseek-harness"><img class="inline-icon" src="images/icons/deepseek-harness.svg" alt="" aria-hidden="true">DeepSeek Harness</a>. They are my trusted partners.
+
 news: []
+# Example (replace [] above with the list):
+#   - date: "2026.11"
+#     text: "Your latest update. Markdown links are supported."
+
 publications: []
+#   - title: "Paper title"
+#     authors: "Author One, Jiale Wang, Author Three"
+#     venue: "Conference or journal"
+#     year: 2026
+#     image: "/images/paper-teaser.jpg"  # Optional
+#     paper_url: "https://..."
+#     project_url: "https://..."         # Optional
+#     code_url: "https://..."            # Optional
+
 awards: []
+#   - date: "2026"
+#     title: "Award name"
+#     description: "Optional details."

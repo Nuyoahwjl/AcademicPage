@@ -23,3 +23,10 @@ main{min-width:0;outline:none}.content-section{padding:0 0 32px;margin:0 0 30px;
 @media(max-width:1023px){body{font-size:16px}.page-grid{display:block;width:calc(100% - 40px)}.header-grid{display:flex;justify-content:center}.section-nav{gap:24px}.section-nav a{font-size:14px}.content-grid{padding-top:32px}.sidebar{position:static;max-height:none;overflow:visible;margin:0 auto 42px;max-width:320px}.content-section:first-child{min-height:0}.content-section{margin-bottom:26px;padding-bottom:26px}.content-section h1,.content-section h2{font-size:25px}.mobile-visitor-map{display:block;width:calc(100% - 40px);max-width:320px;margin:36px auto 0}.mobile-visitor-map .author__visitor-map{margin:0}}
 @media(max-width:600px){:root{--header-height:92px}.section-nav{display:grid;grid-template-columns:repeat(2,max-content);gap:2px 26px;padding:10px 0}.section-nav a{height:32px;justify-content:center}.publication--with-image{grid-template-columns:1fr}.publication-image{max-width:320px}.dated-list li{grid-template-columns:68px minmax(0,1fr);gap:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Compact inline emblems and tool icons in the biography. */
+.inline-icon{display:inline-block;width:1.2em;height:1.2em;object-fit:contain;margin-right:.25em;vertical-align:-.22em}
+.inline-tool{display:inline-flex;align-items:baseline;white-space:nowrap}
+.inline-tool .inline-icon{align-self:center;vertical-align:middle}
+#about-me a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.inline-leading{white-space:nowrap}
