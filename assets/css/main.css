@@ -75,10 +75,18 @@ main{min-width:0;outline:none}.content-section{padding:0 0 18px;margin:0 0 18px;
 .homepage-brand{display:none}
 @media(min-width:1024px){.homepage-brand{display:block;position:absolute;left:0;width:var(--sidebar-width);text-align:center;top:50%;transform:translateY(-50%);font-size:22px;font-weight:600;letter-spacing:-.01em;color:var(--heading-color);white-space:nowrap;text-decoration:none}}
 
-/* Keep the desktop profile anchored to the viewport while the main column scrolls. */
+/* Center the desktop profile and visitor map together, with a compact gap. */
 @media(min-width:1024px){
   .content-grid>main{grid-column:2}
-  .sidebar{position:fixed;left:max(60px,calc((100% - 1360px)/2));top:calc(var(--header-height) + 40px);width:var(--sidebar-width)}
+  .sidebar{position:fixed;left:max(60px,calc((100% - 1360px)/2));top:calc(var(--header-height) + 24px);width:var(--sidebar-width);height:calc(100dvh - var(--header-height) - 48px);overflow-y:auto;overflow-x:hidden}
+  .author-profile{display:grid;height:100%;grid-template-rows:minmax(24px,1fr) auto auto auto auto minmax(24px,1fr)}
+  .author__avatar{grid-row:2;margin:0 auto}
+  .author__content{grid-row:3}
+  .author__name{margin:18px 0 6px}
+  .author__bio{margin:0}
+  .author__links{grid-row:4;margin-top:14px}
+  .author__visitor-map{grid-row:5;margin:24px auto 0}
+  .map-widget{min-height:136px}
 }
 @media(min-width:1024px) and (max-width:1100px){.sidebar{left:36px}}
 .section-nav a:hover,.section-nav a:focus{text-decoration-color:var(--interest-color)}
@@ -119,7 +127,7 @@ a:focus-visible{outline-color:var(--global-link-color)}
 .honors-list li{position:relative;margin-bottom:6px;min-height:24px}
 .honors-list li::before{content:'·';position:absolute;left:-18px;top:0;font-size:22px;font-weight:800;line-height:24px;color:var(--global-text-color)}
 .honors-list p{margin:0}
-@media(min-width:1024px){.author__avatar{width:200px}.author__name{font-size:22px}.author__bio{font-size:16px}}
+@media(min-width:1024px){.author__avatar{width:clamp(160px,26vh,232px)}.author__name{font-size:22px}.author__bio{font-size:16px}}
 
 /* Publications: a consistent figure column with concise bibliographic details. */
 .publication-list{padding-top:4px}
