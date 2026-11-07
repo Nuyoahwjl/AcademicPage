@@ -37,6 +37,8 @@ publications:
     image_width: 1200
     image_height: 443
     paper_url: "/files/atc26.pdf"
+    doi_url: "https://doi.org/10.1145/3828523.3857104"
+    break_title: true
   - title: "Maze: A Distributed Framework for Large Language Model Agents"
     authors: "Jing&nbsp;Gu, Zhuang&nbsp;Xing, Yiheng&nbsp;Yang, Bowen&nbsp;Lv, <strong>Jiale&nbsp;Wang</strong>, Shuo&nbsp;Yuan, Zijin&nbsp;Chen, Jin&nbsp;Zhao, Pengfei&nbsp;Zuo, Long&nbsp;Zheng, Xiaofei&nbsp;Liao, Hai&nbsp;Jin, Qinbin&nbsp;Li<sup>*</sup>"
     venue: "SC 2026"
@@ -48,7 +50,16 @@ publications:
     paper_url: "/files/sc26.pdf"
     code_url: "https://github.com/maze-agent/Maze"
 
-awards: []
-#   - date: "2026"
-#     title: "Award name"
-#     description: "Optional details."
+# One markdown line per award; the date goes in parentheses at the end.
+awards:
+  - text: >-
+      Merit Student of HUST (Sep 2024, Sep 2025, Sep 2026)
+  - text: >-
+      National First Prize in the <a class="news-link" href="https://www.aicomp.cn/"><img class="news-logo news-logo--aicomp" src="images/icons/aicomp.png" alt="" aria-hidden="true">AICOMP Competition</a> (Dec 2025)
+  - text: >-
+      Outstanding Undergraduate of HUST for Academic Performance (Dec 2025)
+  - text: >-
+      Huawei Scholarship (Nov 2025)
+  - text: >-
+      Excellent Communist Youth League Member (May 2024, May 2025)
+

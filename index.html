@@ -36,13 +36,14 @@ layout: homepage
             </figure>
           {% endif %}
           <div class="publication-details">
-            <h3>{{ paper.title | escape }}</h3>
+            <h3>{% if paper.break_title %}{% assign broken_title = paper.title | escape | replace_first: ': ', ':</span> <span class="publication-title-rest">' %}<span class="publication-title-main">{{ broken_title }}</span>{% else %}{{ paper.title | escape }}{% endif %}</h3>
             {% assign author_parts = paper.authors | split: ', ' %}
             <p class="publication-authors">
               {% for author in author_parts %}
                 {% if forloop.last %}
                   <span class="publication-author-tail">{{ author }}<span class="paper-links">
                     {% if paper.paper_url %}<a href="{{ paper.paper_url | relative_url }}">[Paper]</a>{% endif %}
+                    {% if paper.doi_url %}<a href="{{ paper.doi_url | escape }}">[DOI]</a>{% endif %}
                     {% if paper.code_url %}<a href="{{ paper.code_url | escape }}">[Code]</a>{% endif %}
                   </span></span>
                 {% else %}{{ author }}, {% endif %}
@@ -60,9 +61,9 @@ layout: homepage
 <section id="honors-and-awards" class="content-section">
   <h2><span aria-hidden="true">🏆</span> Honors and Awards</h2>
   {% if site.data.homepage.awards.size > 0 %}
-    <ul class="dated-list">
+    <ul class="honors-list">
       {% for award in site.data.homepage.awards %}
-        <li><time>{{ award.date }}</time><div><strong>{{ award.title }}</strong>{% if award.description %}<p>{{ award.description }}</p>{% endif %}</div></li>
+        <li><div class="news-text">{{ award.text | markdownify }}</div></li>
       {% endfor %}
     </ul>
   {% else %}
