@@ -143,12 +143,12 @@ a:focus-visible{outline-color:var(--global-link-color)}
 .publication-badge{position:absolute;top:6px;left:-8px;padding:3px 12px;background:#0b326b;color:#fff;font-size:14px;font-weight:600;line-height:1.3;white-space:nowrap}
 /* The title column is a container so the heading can shrink instead of wrapping. */
 .publication-details{min-width:0;container-type:inline-size}
-.publication h3{margin:0 0 6px;color:var(--heading-color);font-size:18px;font-size:clamp(14.5px,3.1cqw,18px);font-weight:700;line-height:1.3;letter-spacing:-.01em}
+.publication h3{margin:0 0 6px;color:var(--heading-color);font-size:18px;font-weight:700;line-height:1.3;letter-spacing:-.01em}
 /* On desktop the subtitle starts its own line; on narrow screens it flows inline. */
 .publication-title-rest{display:inline}
 @media(min-width:1024px){.publication-title-rest{display:block}}
 .publication .publication-authors{margin:0;color:var(--global-text-color);font-size:16px;line-height:1.55;text-wrap:pretty}
-.publication-authors strong{font-weight:650}
+.publication-authors strong{font-weight:650;color:var(--interest-color)}
 .publication-authors sup{font-size:.75em;line-height:0}
 .publication-author-tail{white-space:nowrap}
 .paper-links{display:inline;white-space:nowrap;font-size:16px;font-weight:400;line-height:inherit}
