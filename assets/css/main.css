@@ -56,7 +56,8 @@ main{min-width:0;outline:none}.content-section{padding:0 0 18px;margin:0 0 18px;
 .theme-toggle svg{grid-area:1/1;width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .theme-sun{visibility:hidden}[data-theme="dark"] .theme-moon{visibility:hidden}[data-theme="dark"] .theme-sun{visibility:visible}
 @media(min-width:1024px){
-  :root{--sidebar-width:320px;--column-gap:44px}
+  :root{--sidebar-width:272px;--column-gap:48px;--page-gutter:clamp(64px,6.25vw,112px);--page-max-width:1248px}
+  .page-grid{width:calc(100% - 2 * var(--page-gutter));max-width:var(--page-max-width)}
   .header-grid{display:flex;justify-content:center;align-items:center}
   .section-nav{flex:none;gap:12px;transform:translateX(48px)}
   .section-nav a{height:42px;padding:0 17px}
@@ -79,9 +80,9 @@ main{min-width:0;outline:none}.content-section{padding:0 0 18px;margin:0 0 18px;
 /* Center the desktop profile and visitor map together, with a compact gap. */
 @media(min-width:1024px){
   .content-grid>main{grid-column:2}
-  .sidebar{position:fixed;left:max(60px,calc((100% - 1360px)/2));top:calc(var(--header-height) + 24px);width:var(--sidebar-width);height:calc(100dvh - var(--header-height) - 48px);overflow-y:auto;overflow-x:hidden}
+  .sidebar{position:fixed;left:max(var(--page-gutter),calc((100% - var(--page-max-width))/2));top:calc(var(--header-height) + 24px);width:var(--sidebar-width);height:calc(100dvh - var(--header-height) - 48px);overflow-y:auto;overflow-x:hidden}
   .author-profile{display:grid;height:100%;grid-template-rows:minmax(24px,1fr) auto auto auto auto minmax(24px,1fr)}
-  .author__avatar{grid-row:2;margin:0 auto}
+  .author__avatar{grid-row:2;max-width:100%;margin:0 auto}
   .author__content{grid-row:3}
   .author__name{margin:18px 0 6px}
   .author__bio{margin:0}
@@ -89,7 +90,6 @@ main{min-width:0;outline:none}.content-section{padding:0 0 18px;margin:0 0 18px;
   .author__visitor-map{grid-row:5;margin:24px auto 0}
   .map-widget{min-height:136px}
 }
-@media(min-width:1024px) and (max-width:1100px){.sidebar{left:36px}}
 .section-nav a:hover,.section-nav a:focus{text-decoration-color:var(--interest-color)}
 .theme-toggle:focus-visible{outline:2px solid var(--interest-color);outline-offset:3px}
 a:focus-visible{outline-color:var(--global-link-color)}
