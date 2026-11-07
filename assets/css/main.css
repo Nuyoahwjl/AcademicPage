@@ -27,7 +27,7 @@ main{min-width:0;outline:none}.content-section{padding:0 0 18px;margin:0 0 18px;
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
 /* Compact inline emblems and tool icons in the biography. */
-.inline-icon{display:inline-block;width:22px;height:22px;object-fit:contain;margin-right:.25em;vertical-align:-.22em;flex-shrink:0}
+.inline-icon{display:inline-block;width:20px;height:20px;object-fit:contain;margin-right:.25em;vertical-align:-.22em;flex-shrink:0}
 /* The Codex silhouette fills its canvas; inset it for a similar visual weight. */
 .inline-icon[src$="codex.svg"]{padding:2px}
 .inline-icon[src$="valorant.svg"]{padding:2px}
@@ -68,7 +68,8 @@ main{min-width:0;outline:none}.content-section{padding:0 0 18px;margin:0 0 18px;
 
 /* Display only the emblem at the left of the original school wordmark. */
 .inline-icon--cs{position:relative;overflow:hidden}.inline-icon--cs img{position:absolute;top:12.5%;left:0;width:auto;height:75%;max-width:none}
-.inline-icon--portrait{border-radius:50%;object-fit:cover}
+.inline-icon--portrait{width:18px;height:18px;border-radius:50%;object-fit:cover}
+.inline-icon[src$="zju.png"]{width:18px;height:18px;vertical-align:-.16em}
 
 /* Reserve a uniform square for every link icon, including the sidebar. */
 .author__svg-icon{width:22px;height:22px}
@@ -111,10 +112,12 @@ a:focus-visible{outline-color:var(--global-link-color)}
 /* Long conference or program names must not widen the narrow mobile column. */
 @media(max-width:1023px){.news-link{white-space:normal}}
 .news-logo{display:inline-block;width:auto;height:20px;max-width:60px;object-fit:contain;margin-right:.3em;vertical-align:-.25em}
-.news-logo--sc26{height:24px;max-width:75px}
-.news-logo--scts{height:16px}
+.news-logo--sc26{height:20px;max-width:75px;vertical-align:-5px}
+.news-logo[src$="yonsei.png"],.news-logo--sigops{height:18px}
+.news-logo--cvpr{vertical-align:-5px}
+.news-logo--scts{height:14px;vertical-align:-2px}
 /* The AiC wordmark is dense, so it sits smaller than the other venue logos. */
-.news-logo--aicomp{height:14px;max-width:40px;vertical-align:-.15em}
+.news-logo--aicomp{height:12px;max-width:40px;vertical-align:-1px}
 [data-theme="dark"] .news-logo--aicomp{filter:brightness(1.8) saturate(1.05)}
 .news-logo--dark{display:none}
 [data-theme="dark"] .news-logo--light{display:none}
