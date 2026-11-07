@@ -77,17 +77,18 @@ main{min-width:0;outline:none}.content-section{padding:0 0 18px;margin:0 0 18px;
 .homepage-brand{display:none}
 @media(min-width:1024px){.homepage-brand{display:block;position:absolute;left:0;width:var(--sidebar-width);text-align:center;top:50%;transform:translateY(-50%);font-size:22px;font-weight:600;letter-spacing:-.01em;color:var(--heading-color);white-space:nowrap;text-decoration:none}}
 
-/* Center the desktop profile and visitor map together, with a compact gap. */
+/* Center the desktop profile and map with generous, height-aware spacing. */
 @media(min-width:1024px){
   .content-grid>main{grid-column:2}
   .sidebar{position:fixed;left:max(var(--page-gutter),calc((100% - var(--page-max-width))/2));top:calc(var(--header-height) + 24px);width:var(--sidebar-width);height:calc(100dvh - var(--header-height) - 48px);overflow-y:auto;overflow-x:hidden}
   .author-profile{display:grid;height:100%;grid-template-rows:minmax(24px,1fr) auto auto auto auto minmax(24px,1fr)}
   .author__avatar{grid-row:2;max-width:100%;margin:0 auto}
   .author__content{grid-row:3}
-  .author__name{margin:18px 0 6px}
+  .author__name{margin:clamp(18px,3vh,26px) 0 10px}
   .author__bio{margin:0}
-  .author__links{grid-row:4;margin-top:14px}
-  .author__visitor-map{grid-row:5;margin:24px auto 0}
+  .author__links{grid-row:4;margin-top:clamp(14px,2.7vh,24px)}
+  .author__visitor-map{grid-row:5;margin:clamp(24px,4.5vh,40px) auto 0}
+  .author__visitor-map .template-link{margin-top:18px}
   .map-widget{min-height:136px}
 }
 .section-nav a:hover,.section-nav a:focus{text-decoration-color:var(--interest-color)}
