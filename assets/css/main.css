@@ -99,6 +99,8 @@ a:focus-visible{outline-color:var(--global-link-color)}
 .map-status[hidden],.map-status button[hidden]{display:none}
 .map-status p{margin:0}.map-status button{border:1px solid var(--global-border-color);border-radius:4px;background:transparent;padding:4px 12px;color:var(--global-link-color);font:inherit;cursor:pointer}
 .map-widget[data-state="error"] .map-link>span{display:none!important}
+.template-link{display:flex;align-items:center;justify-content:center;gap:4px;width:fit-content;margin:12px auto 0;color:var(--muted-color);font-size:16px;line-height:1.5;text-decoration:none}
+.template-link:hover,.template-link:focus{color:var(--global-link-color);text-decoration:none}
 
 /* News stays compact; each short update occupies its own row. */
 .news-list{padding-left:48px;font-size:16px;line-height:24px}
