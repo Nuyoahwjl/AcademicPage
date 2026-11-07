@@ -145,3 +145,36 @@ a:focus-visible{outline-color:var(--global-link-color)}
 .paper-links a:hover{text-decoration:underline;text-underline-offset:3px}
 @media(min-width:1024px){.publication--with-image{grid-template-columns:minmax(150px,18%) minmax(0,1fr);gap:24px;align-items:center}}
 @media(min-width:1280px){.publication--with-image{grid-template-columns:minmax(170px,22%) minmax(0,1fr)}}
+
+/* Mobile header, horizontal profile, and compact lists. Desktop rules stay intact. */
+@media(max-width:1023px){
+  :root{--header-height:64px}
+  .header-grid{justify-content:space-between;align-items:center;padding:0}
+  .homepage-brand{display:block;font-size:20px;font-weight:600;letter-spacing:-.01em;color:var(--heading-color)}
+  .section-nav{display:none}
+  .sidebar{max-width:none;margin-bottom:24px}
+  .author-profile{display:grid;grid-template-columns:96px minmax(0,max-content);grid-template-rows:auto auto;gap:8px 20px;align-items:center;max-width:480px;margin:0;text-align:left}
+  .author__avatar{grid-row:1/3;width:96px;max-width:none;margin:0}
+  .author__content{min-width:0;align-self:end}
+  .author__name{margin:0;font-size:22px}
+  .author__bio{display:none}
+  .author__links{grid-column:2;grid-row:2;min-width:0;align-self:start;justify-content:space-between;gap:0}
+  .author__links a{flex:0 0 26px;width:26px;height:36px}
+  .author__svg-icon{width:26px;height:26px}
+  .news-list,.honors-list{padding-left:0}
+  .news-list li{grid-template-columns:60px minmax(0,1fr);gap:4px;margin-bottom:4px;padding-left:12px}
+  .news-list li:last-child{margin-bottom:0}
+  .news-list li::before,.honors-list li::before{display:block;left:0}
+  .news-entry{gap:4px;margin-left:0}
+  .honors-list li{margin-bottom:0;padding-left:12px}
+  .publication h3{font-size:16px}
+  .publication h3,.publication .publication-authors{text-align:justify;text-align-last:left}
+  .publication--with-image{align-items:center}
+  /* Fill the figure instead of retaining the earlier 320px image cap. */
+  .publication-preview .publication-image{max-width:none}
+}
+@media(max-width:360px){
+  .author-profile{grid-template-columns:88px minmax(0,max-content);column-gap:16px}
+  .author__avatar{width:88px}
+  .author__name{font-size:18px}
+}
