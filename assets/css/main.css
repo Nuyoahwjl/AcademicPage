@@ -81,7 +81,6 @@ main{min-width:0;outline:none}.content-section{padding:0 0 18px;margin:0 0 18px;
   .sidebar{position:fixed;left:max(60px,calc((100% - 1360px)/2));top:calc(var(--header-height) + 40px);width:var(--sidebar-width)}
 }
 @media(min-width:1024px) and (max-width:1100px){.sidebar{left:36px}}
-}
 .section-nav a:hover,.section-nav a:focus{text-decoration-color:var(--interest-color)}
 .theme-toggle:focus-visible{outline:2px solid var(--interest-color);outline-offset:3px}
 a:focus-visible{outline-color:var(--global-link-color)}
