@@ -12,15 +12,18 @@
         ? preference : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     } catch (_) { document.documentElement.dataset.theme = 'light'; }
   </script>
-  <link rel="icon" href="{{ '/images/lele.jpg' | relative_url }}">
+  {% assign asset_version = site.time | date: '%s' %}
+  <link rel="icon" type="image/svg+xml" sizes="any" href="{{ '/images/favicon.svg' | relative_url }}?v={{ asset_version }}">
   <link rel="preload" href="{{ '/assets/fonts/InterVariable.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  <script defer src="{{ '/assets/js/navigation.js' | relative_url }}"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ asset_version }}">
+  <script defer src="{{ '/assets/js/navigation.js' | relative_url }}?v={{ asset_version }}"></script>
+  <script defer src="{{ '/assets/js/visitor-map.js' | relative_url }}?v={{ asset_version }}"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <div class="page-grid header-grid">
+      <span class="homepage-brand">Academic Page</span>
       <nav class="section-nav" aria-label="Page sections">
         {% for item in site.data.navigation.main %}
           <a href="{{ item.url }}">{{ item.title }}</a>
