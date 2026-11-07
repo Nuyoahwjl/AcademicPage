@@ -7,11 +7,15 @@ layout: homepage
 </section>
 
 <section id="news" class="content-section">
-  <h2>News</h2>
+  <h2><span aria-hidden="true">🔥</span> News</h2>
   {% if site.data.homepage.news.size > 0 %}
-    <ul class="dated-list">
-      {% for item in site.data.homepage.news %}
-        <li><time>{{ item.date }}</time><div>{{ item.text | markdownify }}</div></li>
+    {% assign news_items = site.data.homepage.news | sort: 'date' | reverse %}
+    <ul class="dated-list news-list">
+      {% for item in news_items %}
+        <li>
+          <time datetime="{{ item.date | date: '%Y-%m' }}">{{ item.date | date: '%Y.%m' }}</time>
+          <div class="news-entry"><span class="news-emoji" aria-hidden="true">{{ item.emoji }}</span><div class="news-text">{{ item.text | markdownify }}</div></div>
+        </li>
       {% endfor %}
     </ul>
   {% else %}
@@ -20,21 +24,30 @@ layout: homepage
 </section>
 
 <section id="publications" class="content-section">
-  <h2>Publications</h2>
+  <h2><span aria-hidden="true">📝</span> Publications</h2>
   {% if site.data.homepage.publications.size > 0 %}
     <div class="publication-list">
       {% for paper in site.data.homepage.publications %}
         <article class="publication{% if paper.image %} publication--with-image{% endif %}">
-          {% if paper.image %}<img class="publication-image" src="{{ paper.image | relative_url }}" alt="{{ paper.title | escape }}" loading="lazy">{% endif %}
-          <div>
-            <h3>{% if paper.paper_url %}<a href="{{ paper.paper_url | escape }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}</h3>
-            <p>{{ paper.authors }}</p>
-            <p class="publication-venue">{{ paper.venue }}{% if paper.year %}, {{ paper.year }}{% endif %}</p>
-            <div class="paper-links">
-              {% if paper.paper_url %}<a href="{{ paper.paper_url | escape }}">Paper</a>{% endif %}
-              {% if paper.project_url %}<a href="{{ paper.project_url | escape }}">Project</a>{% endif %}
-              {% if paper.code_url %}<a href="{{ paper.code_url | escape }}">Code</a>{% endif %}
-            </div>
+          {% if paper.image %}
+            <figure class="publication-preview">
+              {% if paper.venue %}<span class="publication-badge">{{ paper.venue }}</span>{% endif %}
+              <img class="publication-image" src="{{ paper.image | relative_url }}?v={{ site.time | date: '%s' }}" alt="{{ paper.image_alt | default: paper.title | escape }}" width="{{ paper.image_width }}" height="{{ paper.image_height }}" loading="lazy">
+            </figure>
+          {% endif %}
+          <div class="publication-details">
+            <h3>{{ paper.title | escape }}</h3>
+            {% assign author_parts = paper.authors | split: ', ' %}
+            <p class="publication-authors">
+              {% for author in author_parts %}
+                {% if forloop.last %}
+                  <span class="publication-author-tail">{{ author }}<span class="paper-links">
+                    {% if paper.paper_url %}<a href="{{ paper.paper_url | relative_url }}">[Paper]</a>{% endif %}
+                    {% if paper.code_url %}<a href="{{ paper.code_url | escape }}">[Code]</a>{% endif %}
+                  </span></span>
+                {% else %}{{ author }}, {% endif %}
+              {% endfor %}
+            </p>
           </div>
         </article>
       {% endfor %}
@@ -45,7 +58,7 @@ layout: homepage
 </section>
 
 <section id="honors-and-awards" class="content-section">
-  <h2>Honors and Awards</h2>
+  <h2><span aria-hidden="true">🏆</span> Honors and Awards</h2>
   {% if site.data.homepage.awards.size > 0 %}
     <ul class="dated-list">
       {% for award in site.data.homepage.awards %}

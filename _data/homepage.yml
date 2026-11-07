@@ -4,20 +4,49 @@ about: |
 
   I also enjoy collaborating with <a class="inline-tool" href="https://github.com/anthropics/claude-code"><img class="inline-icon" src="images/icons/claudecode.png" alt="" aria-hidden="true">Claude Code</a>, <a class="inline-tool" href="https://github.com/openai/codex"><img class="inline-icon" src="images/icons/codex.svg" alt="" aria-hidden="true">Codex</a>, and <a class="inline-tool" href="https://github.com/deepseek-ai/deepseek-harness"><img class="inline-icon" src="images/icons/deepseek-harness.svg" alt="" aria-hidden="true">DeepSeek Harness</a> to explore ideas, refine code, and work through implementation details. They are my trusted partners in learning and research.
 
-news: []
-# Example (replace [] above with the list):
-#   - date: "2026.11"
-#     text: "Your latest update. Markdown links are supported."
+# Dates use YYYY-MM-DD for sorting; the page displays year and month only.
+news:
+  - date: "2026-12-01"
+    emoji: "❄️"
+    text: >-
+      I will attend <a class="news-link" href="https://winter.yonsei.ac.kr/"><img class="news-logo" src="images/icons/yonsei.png" alt="" aria-hidden="true">Winter Abroad at Yonsei (WAY)</a>.
+  - date: "2026-11-01"
+    emoji: "📜"
+    text: >-
+      One paper was submitted to <a class="news-link" href="https://cvpr.thecvf.com/Conferences/2027"><img class="news-logo news-logo--cvpr" src="images/icons/cvpr.svg" alt="" aria-hidden="true">CVPR 2027</a>.
+  - date: "2026-09-01"
+    emoji: "🎉"
+    text: >-
+      One paper was accepted to <a class="news-link" href="https://atc.sigops.org/2026/"><img class="news-logo news-logo--sigops" src="images/icons/sigops.png" alt="" aria-hidden="true">ATC 2026</a>.
+  - date: "2026-07-01"
+    emoji: "🎉"
+    text: >-
+      One paper was accepted to <a class="news-link" href="https://sc26.supercomputing.org/"><img class="news-logo news-logo--sc26 news-logo--light" src="images/icons/sc26.png" alt="" aria-hidden="true"><img class="news-logo news-logo--sc26 news-logo--dark" src="images/icons/sc26-dark.png" alt="" aria-hidden="true">SC 2026</a>.
+  - date: "2025-04-01"
+    emoji: "💻"
+    text: >-
+      I became a member of the <a class="news-link" href="https://grid.hust.edu.cn/"><img class="news-logo news-logo--scts" src="images/icons/scts.svg" alt="" aria-hidden="true">SCTS Lab</a> at HUST.
 
-publications: []
-#   - title: "Paper title"
-#     authors: "Author One, Jiale Wang, Author Three"
-#     venue: "Conference or journal"
-#     year: 2026
-#     image: "/images/paper-teaser.jpg"  # Optional
-#     paper_url: "https://..."
-#     project_url: "https://..."         # Optional
-#     code_url: "https://..."            # Optional
+publications:
+  - title: "Make Graphs Great Again: Rethinking LLM Agent Architecture via Structure–Semantic Separation"
+    authors: "Jingyi&nbsp;Jia, <strong>Jiale&nbsp;Wang</strong>, Haoyi&nbsp;Zhang, Qinbin&nbsp;Li<sup>*</sup>, Xiaofei&nbsp;Liao, Hai&nbsp;Jin"
+    venue: "ATC 2026"
+    year: 2026
+    image: "/images/publications/atc26-teaser.png"
+    image_alt: "Figure 4: the MotifAgent system architecture"
+    image_width: 1200
+    image_height: 443
+    paper_url: "/files/atc26.pdf"
+  - title: "Maze: A Distributed Framework for Large Language Model Agents"
+    authors: "Jing&nbsp;Gu, Zhuang&nbsp;Xing, Yiheng&nbsp;Yang, Bowen&nbsp;Lv, <strong>Jiale&nbsp;Wang</strong>, Shuo&nbsp;Yuan, Zijin&nbsp;Chen, Jin&nbsp;Zhao, Pengfei&nbsp;Zuo, Long&nbsp;Zheng, Xiaofei&nbsp;Liao, Hai&nbsp;Jin, Qinbin&nbsp;Li<sup>*</sup>"
+    venue: "SC 2026"
+    year: 2026
+    image: "/images/publications/sc26-teaser.png"
+    image_alt: "Figure 3 and Figure 5 side by side: Maze architecture and agent workflow scheduling"
+    image_width: 1200
+    image_height: 536
+    paper_url: "/files/sc26.pdf"
+    code_url: "https://github.com/maze-agent/Maze"
 
 awards: []
 #   - date: "2026"
