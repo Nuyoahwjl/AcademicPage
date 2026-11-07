@@ -1,5 +1,5 @@
-# Workflow for building and deploying an Academic Pages / Jekyll site to GitHub Pages
-name: Deploy Academic Pages template site to Pages
+# Build academicpage and deploy it to GitHub Pages.
+name: Deploy academicpage to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -38,7 +38,8 @@ jobs:
         id: pages
         uses: actions/configure-pages@v6.0.0
       - name: Build with Jekyll
-        # Outputs to the './_site' directory by default
+        # Pages supplies an empty base path for wangjiale.xyz, or /academicpage
+        # when the repository is served at the default GitHub Pages URL.
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production

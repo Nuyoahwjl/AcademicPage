@@ -1,7 +1,8 @@
 title: "Jiale Wang (王家乐)"
 description: "Jiale Wang — Undergraduate at HUST"
-url: "https://nuyoahwjl.github.io"
+url: "https://wangjiale.xyz"
 baseurl: ""
+repository: "Nuyoahwjl/academicpage"
 encoding: "utf-8"
 timezone: "Asia/Shanghai"
 markdown: kramdown
