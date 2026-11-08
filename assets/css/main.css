@@ -194,3 +194,31 @@ a:focus-visible{outline-color:var(--global-link-color)}
   .author__avatar{width:88px}
   .author__name{font-size:18px}
 }
+
+/* Keep the bitmap ocean transparent while the provider owns markers and statistics. */
+.map-embed{--visitor-map-land-color:#7F9FB3}
+[data-theme="dark"] .map-embed{--visitor-map-land-color:#A1BECE}
+.map-land-color{flood-color:var(--visitor-map-land-color)}
+.map-filters{position:absolute;pointer-events:none}
+.map-embed #mapmyvisitors-widget>.mapmyvisitors-map-container{padding:7px 0;overflow:hidden}
+.map-embed .mapmyvisitors-map{position:relative;background-image:none!important;transform:scale(1.1);transform-origin:center}
+/* The provider also bakes tiny zoom buttons into the bitmap's ocean corner. */
+.map-embed .mapmyvisitors-map::before{content:'';position:absolute;inset:0;background-image:var(--visitor-map-image);background-size:100% 100%;filter:url(#visitor-map-transparent);clip-path:polygon(0 0,100% 0,100% 100%,24px 100%,24px calc(100% - 40px),0 calc(100% - 40px));pointer-events:none}
+.map-embed .mapmyvisitors-visitors,.map-embed .mapmyvisitors-date,.map-embed .mapmyvisitors-bottom-text,.map-embed .jvectormap-zoomin,.map-embed .jvectormap-zoomout,.map-embed .jvectormap-goback{display:none!important}
+.map-embed #mapmyvisitors-widget{max-width:none;margin:0;transform-origin:top left}
+/* The standalone map has no navigation entry on the homepage. */
+body.map-page{display:grid;place-items:center;min-height:100dvh;padding:72px 24px 32px}
+.map-page .theme-toggle{position:fixed;top:20px;right:24px;transform:none}
+.standalone-map{width:100%;max-width:720px}
+.map-page .map-widget{position:relative;min-height:0;overflow:hidden}
+.map-page .map-embed{width:100%;margin:0;background:transparent}
+.map-page .mapmyvisitors-map-container{background:transparent!important}
+.map-page .map-widget[data-state="error"] .map-embed{display:none}
+.map-page .mapmyvisitors-map[data-renderer="vector"]::before{display:none}
+.map-page{--visitor-map-land-color:#7F9FB3}
+[data-theme="dark"] .map-page{--visitor-map-land-color:#A1BECE}
+.visitor-vector-land{fill:var(--visitor-map-land-color);stroke:var(--global-bg-color);stroke-width:.5;stroke-linejoin:round;pointer-events:none}
+.visitor-vector-land path{vector-effect:non-scaling-stroke}
+.visitor-vector-preview{display:block;width:100%;height:auto}
+.map-page .map-widget[data-preview="visible"] .map-embed{position:absolute;inset:0;visibility:hidden}
+.map-page .map-status{min-height:0;margin-top:16px}
