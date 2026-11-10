@@ -98,6 +98,13 @@ a:focus-visible{outline-color:var(--global-link-color)}
 ::selection{background:var(--interest-color);color:var(--global-bg-color)}
 .map-status{min-height:136px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--muted-color);font-size:12px;line-height:1.6}
 .map-status[hidden],.map-status button[hidden]{display:none}
+/* Render the map tooltip at body level, clear of sidebar and map clipping. */
+.map-link [data-balloon]::before,.map-link [data-balloon]::after{display:none!important}
+.visitor-map-tooltip{position:fixed;z-index:30;max-width:min(320px,calc(100vw - 24px));padding:6px 12px;border-radius:4px;background:rgba(17,17,17,.9);color:#fff;font:12px/1.5 'Trebuchet MS','Segoe UI',sans-serif;text-align:center;overflow-wrap:anywhere;pointer-events:none}
+.visitor-map-tooltip[hidden]{display:none}
+.visitor-map-tooltip::after{content:'';position:absolute;left:var(--tooltip-arrow-left);transform:translateX(-50%);border:5px solid transparent}
+.visitor-map-tooltip[data-placement="above"]::after{top:100%;border-top-color:rgba(17,17,17,.9)}
+.visitor-map-tooltip[data-placement="below"]::after{bottom:100%;border-bottom-color:rgba(17,17,17,.9)}
 .map-status p{margin:0}.map-status button{border:1px solid var(--global-border-color);border-radius:4px;background:transparent;padding:4px 12px;color:var(--global-link-color);font:inherit;cursor:pointer}
 .map-widget[data-state="error"] .map-link>span{display:none!important}
 .template-link{display:flex;align-items:center;justify-content:center;gap:4px;width:fit-content;margin:12px auto 0;color:var(--muted-color);font-size:16px;line-height:1.5;text-decoration:none}

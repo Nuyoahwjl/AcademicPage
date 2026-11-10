@@ -11,6 +11,51 @@
   const retry = status.querySelector('button');
   let timeout;
 
+  // Keep tooltips outside the scrollable sidebar so its overflow cannot clip them.
+  const tooltip = document.createElement('div');
+  tooltip.id = 'visitor-map-tooltip';
+  tooltip.className = 'visitor-map-tooltip';
+  tooltip.setAttribute('role', 'tooltip');
+  tooltip.hidden = true;
+  document.body.appendChild(tooltip);
+  let activePin;
+
+  function hideTooltip() {
+    tooltip.hidden = true;
+    activePin?.removeAttribute('aria-describedby');
+    activePin = null;
+  }
+
+  container.addEventListener('pointerover', event => {
+    const pin = event.target.closest('[data-balloon]');
+    if (!pin || !holder.contains(pin) || pin === activePin) return;
+    hideTooltip();
+    activePin = pin;
+    pin.setAttribute('aria-describedby', tooltip.id);
+    tooltip.textContent = pin.dataset.balloon;
+    tooltip.hidden = false;
+    tooltip.style.left = '0px';
+    tooltip.style.top = '0px';
+    const rect = pin.getBoundingClientRect();
+    const { width, height } = tooltip.getBoundingClientRect();
+    const center = rect.left + rect.width / 2;
+    const left = Math.max(12, Math.min(center - width / 2, window.innerWidth - width - 12));
+    const above = rect.top - height - 10 >= 12;
+    const top = above ? rect.top - height - 10 : rect.bottom + 10;
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top = `${Math.max(12, Math.min(top, window.innerHeight - height - 12))}px`;
+    tooltip.style.setProperty('--tooltip-arrow-left', `${Math.max(8, Math.min(center - left, width - 8))}px`);
+    tooltip.dataset.placement = above ? 'above' : 'below';
+  });
+  container.addEventListener('pointerout', event => {
+    if (activePin && !activePin.contains(event.relatedTarget)) hideTooltip();
+  });
+  window.addEventListener('scroll', hideTooltip, true);
+  window.addEventListener('resize', hideTooltip);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') hideTooltip();
+  });
+
   function failed() {
     if (status.hidden) return;
     container.dataset.state = 'error';
