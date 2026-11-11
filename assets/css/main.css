@@ -191,8 +191,8 @@ a:focus-visible{outline-color:var(--global-link-color)}
   .publication h3{font-size:16px}
   .publication h3,.publication .publication-authors{text-align:justify;text-align-last:left}
   .publication--with-image{align-items:center}
-  /* Center the image canvas independently of the absolutely positioned venue badge. */
-  .publication-preview{margin:0 8px;padding:20px 6px}
+  /* Keep narrow-screen figures compact, with room above for the venue badge. */
+  .publication-preview{margin:0 8px;padding:18px 3px 3px}
   /* Fill the figure instead of retaining the earlier 320px image cap. */
   .publication-preview .publication-image{max-width:none}
 }
