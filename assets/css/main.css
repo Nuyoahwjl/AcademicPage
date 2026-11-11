@@ -202,6 +202,10 @@ a:focus-visible{outline-color:var(--global-link-color)}
   .author__name{font-size:18px}
 }
 
+/* Keep the dense WanderBench figure close to its frame, below the venue badge. */
+.publication-preview--compact{padding:18px 3px 3px}
+@media(min-width:1024px){.publication h3.publication-title--single-line{font-size:min(18px,3cqw);white-space:nowrap}}
+
 /* Keep the bitmap ocean transparent while the provider owns markers and statistics. */
 .map-embed{--visitor-map-land-color:#7F9FB3}
 [data-theme="dark"] .map-embed{--visitor-map-land-color:#A1BECE}

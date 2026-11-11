@@ -28,6 +28,17 @@ news:
       I became a member of the <a class="news-link" href="https://grid.hust.edu.cn/"><img class="news-logo news-logo--scts" src="images/icons/scts.svg" alt="" aria-hidden="true">SCTS Lab</a> at HUST.
 
 publications:
+  - title: "WanderBench: Can World Models Explore Dynamic Worlds from Video?"
+    authors: "Jiheng&nbsp;Li<sup title='Equal contribution'>†</sup>, <strong>Jiale&nbsp;Wang</strong><sup title='Equal contribution'>†</sup>, Yuhang&nbsp;Chen<sup title='Equal contribution'>†</sup>, Zai&nbsp;Wang<sup title='Equal contribution'>†</sup>, Guangyue&nbsp;Liu"
+    venue: "Arxiv"
+    year: 2026
+    image: "/images/publications/wanderbench-teaser.png"
+    image_alt: "Figure 1: overview of WanderBench, including data collection, evaluation metrics, and task settings"
+    image_width: 1200
+    image_height: 681
+    paper_url: "/files/2611.12557v1.pdf"
+    compact_preview: true
+    single_line_title: true
   - title: "Make Graphs Great Again: Rethinking LLM Agent Architecture via Structure–Semantic Separation"
     authors: "Jingyi&nbsp;Jia, <strong>Jiale&nbsp;Wang</strong>, Haoyi&nbsp;Zhang, Qinbin&nbsp;Li<sup>*</sup>, Xiaofei&nbsp;Liao, Hai&nbsp;Jin"
     venue: "ATC 2026"

@@ -30,13 +30,13 @@ layout: homepage
       {% for paper in site.data.homepage.publications %}
         <article class="publication{% if paper.image %} publication--with-image{% endif %}">
           {% if paper.image %}
-            <figure class="publication-preview">
+            <figure class="publication-preview{% if paper.compact_preview %} publication-preview--compact{% endif %}">
               {% if paper.venue %}<span class="publication-badge">{{ paper.venue }}</span>{% endif %}
               <img class="publication-image" src="{{ paper.image | relative_url }}?v={{ site.time | date: '%s' }}" alt="{{ paper.image_alt | default: paper.title | escape }}" width="{{ paper.image_width }}" height="{{ paper.image_height }}" loading="lazy">
             </figure>
           {% endif %}
           <div class="publication-details">
-            <h3>{% if paper.break_title %}{% assign broken_title = paper.title | escape | replace_first: ': ', ':</span> <span class="publication-title-rest">' %}<span class="publication-title-main">{{ broken_title }}</span>{% else %}{{ paper.title | escape }}{% endif %}</h3>
+            <h3{% if paper.single_line_title %} class="publication-title--single-line"{% endif %}>{% if paper.break_title %}{% assign broken_title = paper.title | escape | replace_first: ': ', ':</span> <span class="publication-title-rest">' %}<span class="publication-title-main">{{ broken_title }}</span>{% else %}{{ paper.title | escape }}{% endif %}</h3>
             {% assign author_parts = paper.authors | split: ', ' %}
             <p class="publication-authors">
               {% for author in author_parts %}
