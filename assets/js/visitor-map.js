@@ -9,6 +9,7 @@
   const holder = container.querySelector('.map-link');
   const status = map.querySelector('.map-status');
   const retry = status.querySelector('button');
+  let snapshot;
   let timeout;
 
   // Keep tooltips outside the scrollable sidebar so its overflow cannot clip them.
@@ -26,7 +27,7 @@
     activePin = null;
   }
 
-  container.addEventListener('pointerover', event => {
+  function showTooltip(event) {
     const pin = event.target.closest('[data-balloon]');
     if (!pin || !holder.contains(pin) || pin === activePin) return;
     hideTooltip();
@@ -34,23 +35,36 @@
     pin.setAttribute('aria-describedby', tooltip.id);
     tooltip.textContent = pin.dataset.balloon;
     tooltip.hidden = false;
+    positionTooltip(pin);
+  }
+
+  function positionTooltip(pin) {
     tooltip.style.left = '0px';
     tooltip.style.top = '0px';
     const rect = pin.getBoundingClientRect();
     const { width, height } = tooltip.getBoundingClientRect();
     const center = rect.left + rect.width / 2;
     const left = Math.max(12, Math.min(center - width / 2, window.innerWidth - width - 12));
-    const above = rect.top - height - 10 >= 12;
-    const top = above ? rect.top - height - 10 : rect.bottom + 10;
+    const above = rect.top - height - 11 >= 12;
+    const top = above ? rect.top - height - 11 : rect.bottom + 11;
     tooltip.style.left = `${left}px`;
     tooltip.style.top = `${Math.max(12, Math.min(top, window.innerHeight - height - 12))}px`;
-    tooltip.style.setProperty('--tooltip-arrow-left', `${Math.max(8, Math.min(center - left, width - 8))}px`);
+    tooltip.style.setProperty('--tooltip-arrow-left', `${Math.max(9, Math.min(center - left, width - 9))}px`);
     tooltip.dataset.placement = above ? 'above' : 'below';
-  });
+  }
+  container.addEventListener('pointerover', showTooltip);
+  container.addEventListener('focusin', showTooltip);
   container.addEventListener('pointerout', event => {
     if (activePin && !activePin.contains(event.relatedTarget)) hideTooltip();
   });
-  window.addEventListener('scroll', hideTooltip, true);
+  container.addEventListener('focusout', hideTooltip);
+  window.addEventListener('scroll', () => {
+    if (activePin && activePin === document.activeElement) {
+      const rect = activePin.getBoundingClientRect();
+      if (rect.bottom > 0 && rect.top < window.innerHeight) positionTooltip(activePin);
+      else hideTooltip();
+    } else hideTooltip();
+  }, true);
   window.addEventListener('resize', hideTooltip);
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') hideTooltip();
@@ -76,6 +90,7 @@
     drawing.style.width = `${width}px`;
     drawing.style.height = `${originalHeight * scale}px`;
     drawing.querySelectorAll(':scope > span').forEach(pin => {
+      if (pin.classList.contains('visitor-map-pin')) return;
       const left = Number(pin.dataset.originalLeft || parseFloat(pin.style.marginLeft));
       const top = Number(pin.dataset.originalTop || parseFloat(pin.style.marginTop));
       if (!Number.isFinite(left) || !Number.isFinite(top)) return;
@@ -90,7 +105,67 @@
       container.dataset.state = 'ready';
       clearTimeout(timeout);
     }
+    renderDashboardPins(drawing);
   }
+
+  function renderDashboardPins(drawing) {
+    const width = drawing.clientWidth;
+    const height = drawing.clientHeight;
+    if (!snapshot || (drawing.dataset.dashboardSnapshot === snapshot.fetchedAt && Number(drawing.dataset.dashboardWidth) === width)) return;
+    hideTooltip();
+    // Keep the official visible base map, click-through, and visit collection.
+    // Match the widget's integer-pixel placement and merge coincident markers.
+    const points = new Map();
+    for (const location of snapshot.locations) {
+      const x = Math.round((location.lon + 180) / 360 * width);
+      const y = Math.round((90 - location.lat) / 180 * height);
+      const key = `${x},${y}`;
+      const point = points.get(key) || { x, y, places: new Set() };
+      location.places.forEach(name => point.places.add(name));
+      points.set(key, point);
+    }
+    drawing.querySelectorAll(':scope > span').forEach(pin => pin.remove());
+    for (const point of points.values()) {
+      const pin = document.createElement('span');
+      pin.className = 'visitor-map-pin';
+      pin.style.left = `${point.x}px`;
+      pin.style.top = `${point.y}px`;
+      pin.dataset.balloon = [...point.places].sort().join('\n');
+      pin.setAttribute('tabindex', '0');
+      pin.setAttribute('role', 'img');
+      pin.setAttribute('aria-label', pin.dataset.balloon);
+      // Use the original widget asset, dimensions, and white outline.
+      const image = document.createElement('img');
+      image.src = 'https://widgets.amung.us/mappoints/heart-orange.png';
+      image.alt = '';
+      image.width = image.height = 10;
+      pin.appendChild(image);
+      drawing.appendChild(pin);
+    }
+    drawing.dataset.dashboardSnapshot = snapshot.fetchedAt;
+    drawing.dataset.dashboardWidth = width;
+    container.dataset.source = 'dashboard-snapshot';
+  }
+
+  fetch(map.dataset.snapshot, { cache: 'no-cache' }).then(response => {
+    if (!response.ok) throw new Error('Dashboard snapshot unavailable');
+    return response.json();
+  }).then(data => {
+    const siteId = JSON.parse(document.getElementById('_waurx1').textContent).id;
+    const valid = data.siteId === siteId && typeof data.fetchedAt === 'string' && Number.isFinite(Date.parse(data.fetchedAt)) &&
+      Array.isArray(data.locations) && data.locations.length > 0 && data.locationCount === data.locations.length &&
+      data.locations.every(location => Number.isFinite(location.lat) && Math.abs(location.lat) <= 90 &&
+        Number.isFinite(location.lon) && Math.abs(location.lon) <= 180 &&
+        Array.isArray(location.places) && location.places.length > 0 && location.places.every(place => typeof place === 'string' && place.length > 0) &&
+        new Set(location.places).size === location.places.length) &&
+      new Set(data.locations.map(location => `${location.lat},${location.lon}`)).size === data.locations.length;
+    if (!valid) throw new Error('Invalid dashboard snapshot');
+    snapshot = data;
+    fitMap();
+  }).catch(() => {
+    // Retain the official widget when the snapshot cannot be read.
+    container.dataset.source = 'widget';
+  });
 
   function placeMap() {
     (mobileLayout.matches ? mobileParent : desktopParent).appendChild(map);

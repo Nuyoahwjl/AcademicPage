@@ -1,0 +1,507 @@
+{
+  "siteId": "y2ne2xcsze",
+  "source": "https://whos.amung.us/stats/data/?k=y2ne2xcsze&pins=old",
+  "fetchedAt": "2026-11-21T14:22:28.792Z",
+  "scope": "Distinct places returned by the dashboard map endpoint at fetch time; not verified all-time coverage.",
+  "locationCount": 71,
+  "locations": [
+    {
+      "lat": 37.8,
+      "lon": -122.4,
+      "places": [
+        "San Francisco, US"
+      ]
+    },
+    {
+      "lat": 37.4,
+      "lon": -122,
+      "places": [
+        "Santa Clara, US"
+      ]
+    },
+    {
+      "lat": 37.3,
+      "lon": -121.9,
+      "places": [
+        "San Jose, US"
+      ]
+    },
+    {
+      "lat": 37.5,
+      "lon": -121.9,
+      "places": [
+        "Fremont, US"
+      ]
+    },
+    {
+      "lat": 37.2,
+      "lon": -121.8,
+      "places": [
+        "San Jose (Edenvale), US"
+      ]
+    },
+    {
+      "lat": 47.2,
+      "lon": -119.9,
+      "places": [
+        "Quincy, US"
+      ]
+    },
+    {
+      "lat": 45.8,
+      "lon": -119.7,
+      "places": [
+        "Boardman, US"
+      ]
+    },
+    {
+      "lat": 34,
+      "lon": -118.3,
+      "places": [
+        "Los Angeles (Downtown Los Angeles), US"
+      ]
+    },
+    {
+      "lat": 34.1,
+      "lon": -118.3,
+      "places": [
+        "Los Angeles (Central-Alameda), US"
+      ]
+    },
+    {
+      "lat": 34.1,
+      "lon": -118.2,
+      "places": [
+        "Los Angeles, US"
+      ]
+    },
+    {
+      "lat": 33.4,
+      "lon": -112,
+      "places": [
+        "Phoenix (Southbank), US"
+      ]
+    },
+    {
+      "lat": 19.2,
+      "lon": -99.1,
+      "places": [
+        "Mexico City, MX"
+      ]
+    },
+    {
+      "lat": 32.8,
+      "lon": -96.8,
+      "places": [
+        "Dallas, US"
+      ]
+    },
+    {
+      "lat": 45.3,
+      "lon": -92.4,
+      "places": [
+        "Amery, US"
+      ]
+    },
+    {
+      "lat": 39,
+      "lon": -77.5,
+      "places": [
+        "Ashburn, US"
+      ]
+    },
+    {
+      "lat": 39.7,
+      "lon": -75.6,
+      "places": [
+        "New Castle, US"
+      ]
+    },
+    {
+      "lat": 40.7,
+      "lon": -74,
+      "places": [
+        "New York, US"
+      ]
+    },
+    {
+      "lat": -34.3,
+      "lon": -58.8,
+      "places": [
+        "Belen de Escobar, AR"
+      ]
+    },
+    {
+      "lat": -34.8,
+      "lon": -58.4,
+      "places": [
+        "Burzaco, AR"
+      ]
+    },
+    {
+      "lat": 50.7,
+      "lon": -3.5,
+      "places": [
+        "Exeter, GB"
+      ]
+    },
+    {
+      "lat": 51.5,
+      "lon": -0.1,
+      "places": [
+        "London, GB"
+      ]
+    },
+    {
+      "lat": 52.4,
+      "lon": 4.6,
+      "places": [
+        "Haarlem, NL"
+      ]
+    },
+    {
+      "lat": 50.9,
+      "lon": 6.1,
+      "places": [
+        "Eygelshoven, NL"
+      ]
+    },
+    {
+      "lat": 53.2,
+      "lon": 6.6,
+      "places": [
+        "Groningen (Oosterpoortwijk), NL"
+      ]
+    },
+    {
+      "lat": 50.1,
+      "lon": 8.7,
+      "places": [
+        "Frankfurt am Main, DE"
+      ]
+    },
+    {
+      "lat": 50.5,
+      "lon": 12.4,
+      "places": [
+        "Falkenstein, DE"
+      ]
+    },
+    {
+      "lat": 59.3,
+      "lon": 18.1,
+      "places": [
+        "Stockholm, SE"
+      ]
+    },
+    {
+      "lat": 52.2,
+      "lon": 21,
+      "places": [
+        "Warsaw, PL"
+      ]
+    },
+    {
+      "lat": 54.7,
+      "lon": 25.3,
+      "places": [
+        "Vilnius, LT"
+      ]
+    },
+    {
+      "lat": 25.2,
+      "lon": 55.3,
+      "places": [
+        "Dubai, AE"
+      ]
+    },
+    {
+      "lat": 3.1,
+      "lon": 101.5,
+      "places": [
+        "Shah Alam, MY"
+      ]
+    },
+    {
+      "lat": 36.6,
+      "lon": 101.8,
+      "places": [
+        "Xining, CN"
+      ]
+    },
+    {
+      "lat": 1.3,
+      "lon": 103.8,
+      "places": [
+        "Singapore (Orchard), SG"
+      ]
+    },
+    {
+      "lat": 1.4,
+      "lon": 103.8,
+      "places": [
+        "Singapore, SG"
+      ]
+    },
+    {
+      "lat": 31.1,
+      "lon": 104.4,
+      "places": [
+        "Deyang, CN"
+      ]
+    },
+    {
+      "lat": 31.5,
+      "lon": 104.7,
+      "places": [
+        "Mianyang, CN"
+      ]
+    },
+    {
+      "lat": 30.8,
+      "lon": 106.1,
+      "places": [
+        "Nanchong, CN"
+      ]
+    },
+    {
+      "lat": 26.3,
+      "lon": 107.5,
+      "places": [
+        "Duyun, CN"
+      ]
+    },
+    {
+      "lat": 27.7,
+      "lon": 109.2,
+      "places": [
+        "Tongren (Bijiang), CN"
+      ]
+    },
+    {
+      "lat": 20,
+      "lon": 110.2,
+      "places": [
+        "Haikou, CN"
+      ]
+    },
+    {
+      "lat": 21.3,
+      "lon": 110.4,
+      "places": [
+        "Zhanjiang, CN"
+      ]
+    },
+    {
+      "lat": 23.7,
+      "lon": 113.1,
+      "places": [
+        "Qingyuan, CN"
+      ]
+    },
+    {
+      "lat": 26,
+      "lon": 113.2,
+      "places": [
+        "Chenzhou (Zixing Shi), CN"
+      ]
+    },
+    {
+      "lat": 23.1,
+      "lon": 113.3,
+      "places": [
+        "Guangzhou, CN"
+      ]
+    },
+    {
+      "lat": 22.4,
+      "lon": 113.6,
+      "places": [
+        "Tangjiawan, CN"
+      ]
+    },
+    {
+      "lat": 34.8,
+      "lon": 113.8,
+      "places": [
+        "Guancheng, CN"
+      ]
+    },
+    {
+      "lat": 22.3,
+      "lon": 114.2,
+      "places": [
+        "Hong Kong, HK"
+      ]
+    },
+    {
+      "lat": 22.4,
+      "lon": 114.2,
+      "places": [
+        "Tai Shui Hang, HK"
+      ]
+    },
+    {
+      "lat": 29.8,
+      "lon": 114.3,
+      "places": [
+        "Xianning (Xian An Qu), CN"
+      ]
+    },
+    {
+      "lat": 30.6,
+      "lon": 114.3,
+      "places": [
+        "Wuhan, CN"
+      ]
+    },
+    {
+      "lat": 38.7,
+      "lon": 114.8,
+      "places": [
+        "Baoding (Baoshuixiang), CN"
+      ]
+    },
+    {
+      "lat": 35.2,
+      "lon": 115.5,
+      "places": [
+        "Heze (Mudan Qu), CN"
+      ]
+    },
+    {
+      "lat": 34.2,
+      "lon": 116.1,
+      "places": [
+        "Shangqiu (Guodianxiang), CN"
+      ]
+    },
+    {
+      "lat": 40,
+      "lon": 116.3,
+      "places": [
+        "Haidian (Haidian Qu), CN"
+      ]
+    },
+    {
+      "lat": 39.9,
+      "lon": 116.4,
+      "places": [
+        "Beijing, CN",
+        "Jinrongjie (Xicheng District), CN"
+      ]
+    },
+    {
+      "lat": 36.7,
+      "lon": 117.1,
+      "places": [
+        "Jinan, CN"
+      ]
+    },
+    {
+      "lat": 31.9,
+      "lon": 117.3,
+      "places": [
+        "Hefei, CN"
+      ]
+    },
+    {
+      "lat": 26.3,
+      "lon": 117.6,
+      "places": [
+        "Sanming, CN"
+      ]
+    },
+    {
+      "lat": 24.5,
+      "lon": 118.1,
+      "places": [
+        "Xiamen, CN"
+      ]
+    },
+    {
+      "lat": 26.1,
+      "lon": 119.3,
+      "places": [
+        "Wenquan, CN"
+      ]
+    },
+    {
+      "lat": 23,
+      "lon": 120.2,
+      "places": [
+        "Tainan, TW"
+      ]
+    },
+    {
+      "lat": 31.5,
+      "lon": 120.3,
+      "places": [
+        "Wuxi, CN"
+      ]
+    },
+    {
+      "lat": 28.4,
+      "lon": 121.4,
+      "places": [
+        "Chengdong, CN"
+      ]
+    },
+    {
+      "lat": 28.7,
+      "lon": 121.4,
+      "places": [
+        "Taizhou, CN"
+      ]
+    },
+    {
+      "lat": 25,
+      "lon": 121.5,
+      "places": [
+        "Taipei, TW"
+      ]
+    },
+    {
+      "lat": 41.8,
+      "lon": 123.4,
+      "places": [
+        "Shenyang, CN"
+      ]
+    },
+    {
+      "lat": 43.9,
+      "lon": 125.3,
+      "places": [
+        "Changchun, CN"
+      ]
+    },
+    {
+      "lat": 34.8,
+      "lon": 135.5,
+      "places": [
+        "Suita, JP"
+      ]
+    },
+    {
+      "lat": 35.7,
+      "lon": 139.7,
+      "places": [
+        "Shibuya City, JP"
+      ]
+    },
+    {
+      "lat": -33.9,
+      "lon": 151.2,
+      "places": [
+        "Alexandria, AU"
+      ]
+    },
+    {
+      "lat": -28,
+      "lon": 153.4,
+      "places": [
+        "Gold Coast, AU"
+      ]
+    }
+  ]
+}
