@@ -1,9 +1,10 @@
 {
   "siteId": "y2ne2xcsze",
   "source": "https://whos.amung.us/stats/data/?k=y2ne2xcsze&pins=old",
-  "fetchedAt": "2026-11-21T14:22:28.792Z",
-  "scope": "Distinct places returned by the dashboard map endpoint at fetch time; not verified all-time coverage.",
-  "locationCount": 71,
+  "fetchedAt": "2026-11-23T10:14:45.897Z",
+  "firstFetchedAt": "2026-11-21T14:22:28.792Z",
+  "scope": "Distinct places accumulated from dashboard map snapshots; not verified all-time coverage.",
+  "locationCount": 73,
   "locations": [
     {
       "lat": 37.8,
@@ -104,6 +105,13 @@
       ]
     },
     {
+      "lat": 36.7,
+      "lon": -78.4,
+      "places": [
+        "Boydton, US"
+      ]
+    },
+    {
       "lat": 39,
       "lon": -77.5,
       "places": [
@@ -171,6 +179,13 @@
       "lon": 6.6,
       "places": [
         "Groningen (Oosterpoortwijk), NL"
+      ]
+    },
+    {
+      "lat": 61.2,
+      "lon": 7.1,
+      "places": [
+        "Sogndal, NO"
       ]
     },
     {
